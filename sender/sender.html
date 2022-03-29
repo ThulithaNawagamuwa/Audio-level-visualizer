@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sender</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <div>
+            <input placeholder="Enter username..."
+                    type="text"
+                    id="username-input" /><br>
+            <button onclick="sendUsername()">Send</button>
+            <button onclick="startCall()">Start Call</button>
+        </div>
+        <div id="video-call-div">
+            <video muted id="local-video" autoplay></video>  <!-- local video is initially muted -->
+            <video id="remote-video" autoplay></video>
+            <div class="call-action-div">
+                <button onclick="muteVideo()">Mute Video</button>
+                <button onclick="muteAudio()">Mute Audio</button>
+                <input type="range" orient="vertical" min="0" max="100" value="50" class="slider" id="remoteVolumeRange">
+                <input type="range" orient="vertical" min="0" max="100" value="50" class="slider" id="localVolumeRange">
+
+                <canvas id="canvas-local" width="150" height="300"></canvas>
+                <canvas id="canvas-remote" width="150" height="300"></canvas>
+
+            </div>
+        </div>
+        <script src="./sender.js"></script>
+    </body>
+
+</html>
